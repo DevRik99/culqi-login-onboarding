@@ -3,5 +3,8 @@ import "./assets/styles/main.css";
 import App from "./App.vue";
 import router from "./router/router";
 const app = createApp(App);
+import "vue-skeletor/dist/vue-skeletor.css";
+import { Skeletor } from "vue-skeletor";
 app.use(router);
+app.component("skeletor", Skeletor);
 app.mount("#app");
