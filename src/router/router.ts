@@ -14,7 +14,7 @@ const routes = [
   {
     path: "/clientes",
     name: "Clientes",
-    component: () => import("../views/clientes.vue"),
+    component: () => import("../views/Clientes.vue"),
   },
   {
     path: "/:catchAll(.*)",
