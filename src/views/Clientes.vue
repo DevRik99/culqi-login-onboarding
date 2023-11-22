@@ -23,8 +23,58 @@
         <div class="text-white bg-[#eb6f25] rounded-full p-3">CQ</div>
         <p class="text-sm font-bold">Christian Quispe</p>
       </div>
-      <div class="">
-        <skeletor width="50%"></skeletor>
+      <div class="p-5">
+        <div class="w-full h-full p-8 bg-white rounded shadow-sm">
+          <header class="grid grid-flow-row grid-cols-1 gap-y-3">
+            <div class="flex items-center justify-between w-full">
+              <div class="">
+                <p class="text-2xl font-bold">Empleados</p>
+                <span class="text-gray-400">Gestiona tus empleados</span>
+              </div>
+              <div class="flex gap-4">
+                <button
+                  class="font-bold text-center text-black border w-[150px] h-[56px] border-black rounded-lg"
+                >
+                  Descargar
+                </button>
+                <button
+                  class="font-bold text-center text-white bg-[#111827] border w-[150px] h-[56px] border-black rounded-lg"
+                >
+                  Nuevo
+                </button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[1fr_315px] gap-x-4">
+              <div class="">
+                <div
+                  class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#49c388]"
+                >
+                  <input
+                    type="text"
+                    name="text"
+                    autocomplete="text"
+                    class="flex-1 block p-4 text-gray-900 bg-transparent border-0 placeholder:text-gray-400 focus:ring-0"
+                    placeholder="Buscar empleado"
+                  />
+                </div>
+              </div>
+              <div class="">
+                <div class="w-full h-[56px]">
+                  <select
+                    name="cargo"
+                    autocomplete="cargo-name"
+                    class="rounded-md shadow-sm w-full ring-1 ring-inset p-4 ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-[#49c388]"
+                    placeholder="Nombre del cargo"
+                  >
+                    <option value="" selected disabled>Nombre del cargo</option>
+                    <option value="test">Cargo 1</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
       </div>
     </div>
   </div>
