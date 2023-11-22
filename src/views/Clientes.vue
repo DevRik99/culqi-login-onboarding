@@ -1,6 +1,8 @@
 <template>
-  <div class="w-screen h-screen bg-[#fafafa]">
-    <div class="p-5 h-screen w-[280px] bg-white flex flex-col justify-between">
+  <div class="w-screen h-screen bg-[#fafafa] grid grid-cols-[280px_1fr]">
+    <div
+      class="p-5 h-screen w-[280px] bg-white flex flex-col justify-between border-r-2 border border-gray-200"
+    >
       <div class="">
         <img src="./../assets/img/logo_black.svg" class="mx-auto my-5" alt="Culqi Logo" />
         <ul>
@@ -13,6 +15,14 @@
       >
         Salir
       </button>
+    </div>
+    <div class="grid grid-rows-[96px_1fr] gap-5">
+      <div
+        class="flex items-center justify-end h-[96px] bg-white w-full border border-l-0 border-2 border-gray-200 px-5 gap-2"
+      >
+        <div class="text-white bg-[#eb6f25] rounded-full p-3">CQ</div>
+        <p class="text-sm font-bold">Christian Quispe</p>
+      </div>
     </div>
   </div>
 </template>
