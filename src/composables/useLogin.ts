@@ -26,6 +26,7 @@ const useLogin = () => {
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
       http.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+      error.value = false;
       router.push("/empleados");
       return data;
     } catch (errorLogin: any) {
