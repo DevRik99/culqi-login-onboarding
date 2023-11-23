@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+import { ref } from "vue";
+import useLogin from "./../composables/useLogin";
+const { login, error, loading } = useLogin();
+const password = ref("");
+const email = ref("");
+const handleLogin = () => {
+  login(email.value, password.value);
+};
+</script>
+
 <template>
   <div class="grid w-full h-full grid-cols-2">
     <div class="flex flex-col">
@@ -50,9 +61,23 @@
             />
           </div>
         </div>
+        <div class="mt-2 text-gray-400 mb-7" v-if="error">
+          <p>Correo: c.quispe@culqi.com, password: admin123</p>
+        </div>
+        <div class="mt-2 text-red-500 mb-7" v-if="error">
+          <p><i class="mr-2 bx bx-error-circle"></i>Correo o contraseña incorrectos</p>
+        </div>
         <button
           class="p-5 mb-5 bg-[#111827] text-white text-center font-bold rounded-xl w-full"
           type="submit"
+          v-if="loading"
+        >
+          <i class="bx bx-loader-alt bx-spin"></i>
+        </button>
+        <button
+          class="p-5 mb-5 bg-[#111827] text-white text-center font-bold rounded-xl w-full"
+          type="submit"
+          v-else
         >
           Iniciar sesión
         </button>
@@ -64,14 +89,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { ref } from "vue";
-import useLogin from "./../composables/useLogin";
-const { login } = useLogin();
-const password = ref("");
-const email = ref("");
-const handleLogin = () => {
-  login(email.value, password.value);
-};
-</script>

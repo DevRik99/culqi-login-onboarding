@@ -10,6 +10,13 @@ const routes = [
     path: "/login",
     name: "Login",
     component: () => import("../views/Login.vue"),
+    beforeEnter: () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        return "/empleados";
+      }
+      return !token ? true : false;
+    },
   },
   {
     path: "/empleados",
@@ -17,6 +24,9 @@ const routes = [
     component: () => import("../views/Empleados.vue"),
     beforeEnter: () => {
       const token = localStorage.getItem("token");
+      if (!token) {
+        return "/login";
+      }
       return token ? true : false;
     },
   },

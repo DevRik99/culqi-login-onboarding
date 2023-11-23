@@ -4,6 +4,10 @@
 @tailwind utilities;
 * {
   font-family: "Manrope", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
 }
 input:focus,
 textarea:focus,
