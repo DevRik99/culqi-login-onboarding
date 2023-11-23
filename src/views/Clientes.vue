@@ -6,8 +6,12 @@
       <div class="">
         <img src="./../assets/img/logo_black.svg" class="mx-auto my-5" alt="Culqi Logo" />
         <ul>
-          <li class="font-bold text-sm text-[#00A19B] my-5">Empleados</li>
-          <li class="font-bold text-sm hover:text-[#00A19B] my-5">Reclutamiento</li>
+          <li class="font-bold text-sm text-[#00A19B] my-5">
+            <i class="bx bx-user"></i>Empleados
+          </li>
+          <li class="font-bold text-sm hover:text-[#00A19B] my-5">
+            <i class="bx bx-shopping-bag"></i>Reclutamiento
+          </li>
         </ul>
       </div>
       <button
@@ -35,12 +39,12 @@
                 <button
                   class="font-bold text-center text-black border w-[150px] h-[56px] border-black rounded-lg"
                 >
-                  Descargar
+                  <i class="bx bx-cloud-download"></i> Descargar
                 </button>
                 <button
                   class="font-bold text-center text-white bg-[#111827] border w-[150px] h-[56px] border-black rounded-lg"
                 >
-                  Nuevo
+                  <i class="bx bx-plus"></i> Nuevo
                 </button>
               </div>
             </div>
@@ -93,7 +97,23 @@
                     <td>Team Product</td>
                     <td>Unpixel Office</td>
                     <td>Activada</td>
-                    <td><button>😀</button></td>
+                    <td class="flex items-center justify-end gap-3">
+                      <button
+                        class="w-[34px] h-[34px] text-white bg-[#27a376] rounded-lg"
+                      >
+                        <i class="bx bx-show"></i>
+                      </button>
+                      <button
+                        class="w-[34px] h-[34px] text-white bg-[#2f78ee] rounded-lg"
+                      >
+                        <i class="bx bx-edit-alt"></i>
+                      </button>
+                      <button
+                        class="w-[34px] h-[34px] text-white bg-[#e03137] rounded-lg"
+                      >
+                        <i class="bx bx-trash"></i>
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -110,8 +130,17 @@ th,
 td {
   @apply p-5 text-start;
 }
-th:end,
-td:end {
+th:last-child,
+td:last-child {
   @apply p-5 text-end;
+}
+i {
+  @apply mx-1;
+}
+button {
+  @apply flex items-center justify-center;
+}
+button i {
+  @apply text-xl;
 }
 </style>
