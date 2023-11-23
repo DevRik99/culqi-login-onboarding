@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="grid bg-white place-content-center">
-      <form class="w-[480px] h-[405px]">
+      <form class="w-[480px] h-[405px]" @submit.prevent="handleLogin">
         <p class="pb-5 text-xl font-bold text-center">Inicia sesión</p>
         <label for="email" class="block text-sm font-medium"
           >Correo electrónico <span class="text-red-500">*</span></label
@@ -25,6 +25,8 @@
             <input
               type="email"
               name="email"
+              required
+              v-model="email"
               autocomplete="email"
               class="flex-1 block p-4 text-gray-900 bg-transparent border-0 placeholder:text-gray-400 focus:ring-0"
               placeholder="Ingresa el correo electrónico"
@@ -41,6 +43,7 @@
             <input
               type="password"
               name="password"
+              v-model="password"
               autocomplete="password"
               class="flex-1 block p-4 text-gray-900 bg-transparent border-0 placeholder:text-gray-400 focus:ring-0"
               placeholder="Ingresa la contraseña"
@@ -49,6 +52,7 @@
         </div>
         <button
           class="p-5 mb-5 bg-[#111827] text-white text-center font-bold rounded-xl w-full"
+          type="submit"
         >
           Iniciar sesión
         </button>
@@ -60,3 +64,14 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+import useLogin from "./../composables/useLogin";
+const { login } = useLogin();
+const password = ref("");
+const email = ref("");
+const handleLogin = () => {
+  login(email.value, password.value);
+};
+</script>

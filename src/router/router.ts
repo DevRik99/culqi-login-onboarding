@@ -12,9 +12,13 @@ const routes = [
     component: () => import("../views/Login.vue"),
   },
   {
-    path: "/clientes",
-    name: "Clientes",
-    component: () => import("../views/Clientes.vue"),
+    path: "/empleados",
+    name: "Empleados",
+    component: () => import("../views/Empleados.vue"),
+    beforeEnter: () => {
+      const token = localStorage.getItem("token");
+      return token ? true : false;
+    },
   },
   {
     path: "/:catchAll(.*)",
