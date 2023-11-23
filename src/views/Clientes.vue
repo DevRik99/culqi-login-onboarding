@@ -24,7 +24,7 @@
         <p class="text-sm font-bold">Christian Quispe</p>
       </div>
       <div class="p-5">
-        <div class="w-full h-full p-8 bg-white rounded shadow-sm">
+        <div class="w-full p-8 bg-white rounded shadow-sm h-min">
           <header class="grid grid-flow-row grid-cols-1 gap-y-3">
             <div class="flex items-center justify-between w-full">
               <div class="">
@@ -72,6 +72,31 @@
                   </select>
                 </div>
               </div>
+              <table class="table my-5 rounded table-auto col-span-full">
+                <thead class="bg-[#fafafa] text-gray-500 rounded">
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Nombre cargo</th>
+                    <th>Departamento</th>
+                    <th>Oficina</th>
+                    <th>Cuenta</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="font-bold">Pristia Candra</p>
+                      <span class="text-gray-400">lincoln@unpixel.com</span>
+                    </td>
+                    <td>UI UX Designer</td>
+                    <td>Team Product</td>
+                    <td>Unpixel Office</td>
+                    <td>Activada</td>
+                    <td><button>😀</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </header>
         </div>
@@ -80,4 +105,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<style lang="postcss" scoped>
+th,
+td {
+  @apply p-5 text-start;
+}
+th:end,
+td:end {
+  @apply p-5 text-end;
+}
+</style>
